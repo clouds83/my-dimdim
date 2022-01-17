@@ -1,0 +1,10 @@
+{
+  "colorize.colorized_colors": [
+    "HEXA",
+    "RGB"
+  ],
+
+  "colorize.languages": [
+    "typescript",
+  ]
+}

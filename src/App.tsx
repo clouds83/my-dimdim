@@ -1,7 +1,33 @@
+import React from 'react'
+import { useState } from 'react'
+import Modal from 'react-modal'
+import { Dashboard } from './components/Dashboard/dashboardModule'
+import { Header } from './components/Header/headerModule'
+import { NewTransactionalModal } from './components/NewTransactionalModal/newTransactionalModalModule'
+import { TransactionsProvider } from './TransactionsContext'
+
+Modal.setAppElement('#root')
+
 export function App() {
-  return (
-    <div className="App">
-      <h1>React App with TypeScript and Styled Components</h1>
-    </div>
-  )
+	const [isNewTransactionModalOpen, setIsNewTransactionalModalOpen] =
+		useState(false)
+
+	function handleOpenNewTransactionModal() {
+		setIsNewTransactionalModalOpen(true)
+	}
+
+	function handleCloseNewTransactionModal() {
+		setIsNewTransactionalModalOpen(false)
+	}
+
+	return (
+		<TransactionsProvider>
+			<Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
+			<Dashboard />
+			<NewTransactionalModal
+				isOpen={isNewTransactionModalOpen}
+				onRequestClose={handleCloseNewTransactionModal}
+			/>
+		</TransactionsProvider>
+	)
 }
