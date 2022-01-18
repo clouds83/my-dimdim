@@ -4,7 +4,7 @@ import Modal from 'react-modal'
 import { Dashboard } from './components/Dashboard/dashboardModule'
 import { Header } from './components/Header/headerModule'
 import { NewTransactionalModal } from './components/NewTransactionalModal/newTransactionalModalModule'
-import { TransactionsProvider } from './TransactionsContext'
+import { TransactionsProvider } from './hooks/useTransactions'
 
 Modal.setAppElement('#root')
 

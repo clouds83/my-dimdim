@@ -41,10 +41,10 @@ export const Container = styled.form`
 		margin-top: 1.5rem;
 		font-weight: bold;
 		text-transform: uppercase;
-		transition: filter 0.3s;
+		transition: background 0.3s;
 
 		&:hover {
-			filter: brightness(0.9);
+			background: var(--primary);
 		}
 	}
 `
@@ -70,7 +70,10 @@ export const RadioBox = styled.button<RadioBoxProps>`
 	border: 1px solid #d7d7d7;
 	border-radius: 0.25rem;
 
-	background: ${props => (props.isActive ? transparentize(0.9, colors[props.activeColor]) : 'transparent')};
+	background: ${props =>
+		props.isActive
+			? transparentize(0.9, colors[props.activeColor])
+			: 'transparent'};
 
 	display: flex;
 	align-items: center;
